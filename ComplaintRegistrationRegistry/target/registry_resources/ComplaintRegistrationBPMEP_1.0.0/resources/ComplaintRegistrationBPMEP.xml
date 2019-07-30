@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoint name="ComplaintRegistrationBPMEP" xmlns="http://ws.apache.org/ns/synapse">
+    <http method="post" uri-template="https://localhost:9445/bpmn/runtime/process-instances"/>
+    <property name="authorization" scope="transport" value="Basic YWRtaW46YWRtaW4="/>
+    <property name="content-type" scope="transport" value="application/json"/>
+</endpoint>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/ComplaintRegistration" name="ComplaintRegistrationAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource faultSequence="ComplaintRegireation_Fault_Sequence" methods="POST">
+        <inSequence>
+            <property name="FORCE_SC_ACCEPTED" scope="axis2" type="STRING" value="true"/>
+            <payloadFactory media-type="json">
+                <format>
+                 {   "processDefinitionKey":"complaintRegistrationFrontDeskProcess",   "businessKey":"myBusinessKey",   "tenantId": "-1234",   "variables": [      {        "name":"topic",        "value":"$1"      },     {        "name":"description",        "value":"$2"      },      {        "name":"email",        "value":"$3"      },      {        "name":"name",        "value":"$4"      },      {        "name":"category",        "value":"$5"      }   ]}
+              </format>
+                <args>
+                    <arg evaluator="json" expression="$.topic"/>
+                    <arg evaluator="json" expression="$.description"/>
+                    <arg evaluator="json" expression="$.email"/>
+                    <arg evaluator="json" expression="$.name"/>
+                    <arg evaluator="json" expression="$.category"/>
+                </args>
+            </payloadFactory>
+            <log>
+                <property expression="json-eval($)" name="Transformed Request"/>
+            </log>
+            <store messageStore="ComplaintRegistrationMessageStore"/>
+            <log>
+                <property name="Store" value="Message saved in the Complaint Registration Store"/>
+            </log>
+        </inSequence>
+        <outSequence/>
+    </resource>
+</api>

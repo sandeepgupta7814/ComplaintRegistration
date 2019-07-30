@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?><artifacts>
+    <artifact name="ComplaintRegireation_Fault_Sequence" groupId="com.example.ComplaintRegistrationESB.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/ComplaintRegireation_Fault_Sequence.xml</file>
+    </artifact>
+    <artifact name="ComplaintRegistrationMessageStore" groupId="com.example.ComplaintRegistrationESB.message-store" version="1.0.0" type="synapse/message-store" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-stores/ComplaintRegistrationMessageStore.xml</file>
+    </artifact>
+    <artifact name="ComplaintRegistrationAPI" groupId="com.example.ComplaintRegistrationESB.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/api/ComplaintRegistrationAPI.xml</file>
+    </artifact>
+    <artifact name="ComplaintRegistration_Processor_Sequence" groupId="com.example.ComplaintRegistrationESB.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/ComplaintRegistration_Processor_Sequence.xml</file>
+    </artifact>
+    <artifact name="ComplaintRegistrationMessageProcessor" groupId="com.example.ComplaintRegistrationESB.message-processors" version="1.0.0" type="synapse/message-processors" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-processors/ComplaintRegistrationMessageProcessor.xml</file>
+    </artifact>
+</artifacts>
